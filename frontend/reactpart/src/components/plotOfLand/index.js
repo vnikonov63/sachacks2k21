@@ -4,7 +4,6 @@ import { Rnd } from "react-rnd";
 import GardenContext from "../contexts/gardenBasicContext";
 
 const PlotOfLand = ({ props }) => {
-  console.log(props);
   let { field, setField } = useContext(GardenContext);
 
   return (
@@ -24,27 +23,28 @@ const PlotOfLand = ({ props }) => {
             justifyContent: "center",
           }}
           onClick={() => {
-            console.log(props.id);
+            console.log(field[props]);
           }}
           onDragStop={(a, b) => {
             setField((prev) => {
-              /*
-              return prev.map((plotLand) => {
-                plotLand =
-                  plotLand.id === props.id
-                    ? {
-                        ...plotLand,
-                        x: b.x,
-                        y: b.y,
-                      }
-                    : plotLand;
-              });*/
               return {
                 ...prev,
-                props: {
+                [props]: {
                   ...prev[props],
                   x: b.x,
                   y: b.y,
+                },
+              };
+            });
+          }}
+          onResizeStop={(e, direction, ref, delta, position) => {
+            setField((prev) => {
+              return {
+                ...prev,
+                [props]: {
+                  ...prev[props],
+                  width: ref.offsetWidth,
+                  height: ref.offsetHeight,
                 },
               };
             });

@@ -22,7 +22,6 @@ const Garden = () => {
       </button>
       <div>
         {Object.entries(field).map((value) => {
-          console.log("The value is ", field[value[0]]);
           return <PlotOfLand key={uuid()} props={value[0]} />;
         })}
       </div>
