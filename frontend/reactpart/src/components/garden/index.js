@@ -1,20 +1,39 @@
 import React from "react";
-import { Rnd } from "react-rnd";
+import { useState, useEffect } from "react";
+import PlotOfLand from "../plotOfLand";
+
+class PartNode {
+  constructor(x = 0, y = 0, width = 200, height = 300) {
+    this.x = x;
+    this.y = y;
+    this.width = width;
+    this.height = height;
+    this.id = 
+  }
+}
 
 const Garden = () => {
-  console.log(Rnd);
+  let stateRandom = [];
+
+  let [field, setField] = useState(stateRandom);
+
+  console.log(field);
+
   return (
-    <Rnd
-      default={{
-        x: 0,
-        y: 0,
-        width: 300,
-        height: 300,
-      }}
-      style={{ border: "1px solid black" }}
-    >
-      <p>Plot of land</p>
-    </Rnd>
+    <>
+      <button
+        onClick={() => {
+          setField([...field, new PartNode()]);
+        }}
+      >
+        Click me please
+      </button>
+      <div id="collectionOfPlottedLand">
+        {field.map((value) => {
+          return <PlotOfLand props={value} />;
+        })}
+      </div>
+    </>
   );
 };
 
