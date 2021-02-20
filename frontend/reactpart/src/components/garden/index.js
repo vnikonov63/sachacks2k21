@@ -1,36 +1,29 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import PlotOfLand from "../plotOfLand";
+import { uuid } from "uuidv4";
 
-class PartNode {
-  constructor(x = 0, y = 0, width = 200, height = 300) {
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.id = 
-  }
-}
+import GardenContext from "../contexts/gardenBasicContext";
+
+import PartNode from "../../schemas/GardenNodeClass";
 
 const Garden = () => {
-  let stateRandom = [];
-
-  let [field, setField] = useState(stateRandom);
-
-  console.log(field);
-
+  let { field, setField } = useContext(GardenContext);
   return (
     <>
       <button
         onClick={() => {
-          setField([...field, new PartNode()]);
+          let obj = {};
+          obj[uuid()] = new PartNode();
+          setField({ ...field, ...obj });
         }}
       >
         Click me please
       </button>
-      <div id="collectionOfPlottedLand">
-        {field.map((value) => {
-          return <PlotOfLand props={value} />;
+      <div>
+        {Object.entries(field).map((value) => {
+          console.log("The value is ", field[value[0]]);
+          return <PlotOfLand key={uuid()} props={value[0]} />;
         })}
       </div>
     </>
