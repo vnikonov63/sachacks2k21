@@ -11,6 +11,13 @@ import PartNode from "../../schemas/GardenNodeClass";
 const Garden = () => {
   let { field, setField } = useContext(GardenContext);
   const { gardenState, setGardenState } = useContext(GardenContextFinal);
+  useEffect(() => {
+    if (localStorage.getItem("saved garden")) {
+      let obj = JSON.parse(localStorage.getItem("saved garden"));
+      console.log(obj);
+      setField(obj);
+    }
+  }, []);
   return (
     <>
       <div
@@ -34,6 +41,12 @@ const Garden = () => {
         <button
           onClick={() => {
             setGardenState(field);
+            try {
+              const serializedState = JSON.stringify(field);
+              localStorage.setItem("saved garden", serializedState);
+            } catch (err) {
+              console.log(err);
+            }
           }}
         >
           Save the model
@@ -41,7 +54,7 @@ const Garden = () => {
       </div>
       <div
         id="gardenLimits"
-        style={{ height: "900px", width: "700px", border: "2px solid black" }}
+        style={{ height: "60%", width: "50%", border: "1px solid black" }}
       >
         {Object.entries(field).map((value) => {
           return <PlotOfLand key={uuid()} props={value[0]} />;

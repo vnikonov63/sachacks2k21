@@ -37,6 +37,7 @@ const PlotOfLand = ({ props }) => {
               };
             });
           }}
+          resizeHandleWrapperClass="#gardenLimits"
           minHeight="16"
           minWidth="16"
           onResizeStop={(e, direction, ref, delta, position) => {
