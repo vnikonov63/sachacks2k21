@@ -17,7 +17,16 @@ function GardenBuilder() {
           setField,
         }}
       >
-        <Garden />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Garden />
+        </div>
       </GardenContext.Provider>
       <div></div>
     </>

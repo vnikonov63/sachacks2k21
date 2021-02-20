@@ -37,6 +37,8 @@ const PlotOfLand = ({ props }) => {
               };
             });
           }}
+          minHeight="16"
+          minWidth="16"
           onResizeStop={(e, direction, ref, delta, position) => {
             setField((prev) => {
               return {
@@ -49,6 +51,7 @@ const PlotOfLand = ({ props }) => {
               };
             });
           }}
+          bounds="#gardenLimits"
         ></Rnd>
       ) : (
         <p>Nothing to display</p>
