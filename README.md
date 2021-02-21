@@ -100,6 +100,8 @@ npm install yarn --global
 <p>5. You can give names to blocks </p>
 <img src="https://i.postimg.cc/mkPJtY54/7.gif" />
 
+<p> For more information you can watch the video we made about our project https://www.youtube.com/watch?v=juMu1YXpLF0 </p>
+
 <!-- CONTACT -->
 ## Contact
 
