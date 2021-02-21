@@ -10,7 +10,7 @@ function ListOFBlocks() {
       id="BlocksNames"
       style={{
         height: "60%",
-        width: "20%",
+        width: "30%",
         border: "3px solid black",
         display: "flex",
         flexDirection: "column",
