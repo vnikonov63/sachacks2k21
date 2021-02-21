@@ -7,8 +7,8 @@ function NavigationBar() {
       <div class="nav-wrapper">
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li>
-            <Link to="/edit">
-              <h5>Edit</h5>
+            <Link to="/">
+              <h5>Home</h5>
             </Link>
           </li>
           <li>
@@ -17,7 +17,9 @@ function NavigationBar() {
             </Link>
           </li>
           <li>
-            <a>JavaScript</a>
+            <Link to="/edit">
+              <h5>Edit</h5>
+            </Link>
           </li>
         </ul>
       </div>

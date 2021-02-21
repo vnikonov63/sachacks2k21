@@ -18,6 +18,7 @@ function App() {
               <GardenWrapper />
             </Route>
             <Route path="/saved" exact></Route>
+            <Route path="/" exact></Route>
           </Switch>
         </Router>
       </GardenSavedContext.Provider>

@@ -4,6 +4,7 @@ class PartNode {
     this.y = y;
     this.width = width;
     this.height = height;
+    this.color = "black";
   }
 }
 

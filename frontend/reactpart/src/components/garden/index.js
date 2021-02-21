@@ -7,6 +7,7 @@ import GardenContext from "../contexts/gardenBasicContext";
 import GardenContextFinal from "../contexts/gardenSavedContext";
 
 import PartNode from "../../schemas/GardenNodeClass";
+import ListOFBlocks from "../ListOfBlocksSoFar";
 
 const Garden = () => {
   let { field, setField } = useContext(GardenContext);
@@ -30,6 +31,8 @@ const Garden = () => {
         }}
       >
         <button
+          style={{ marginRight: "20px" }}
+          className="waves-effect waves-light btn"
           onClick={() => {
             let obj = {};
             obj[uuid()] = new PartNode();
@@ -39,6 +42,7 @@ const Garden = () => {
           Create a new block
         </button>
         <button
+          className="waves-effect waves-light btn"
           onClick={() => {
             setGardenState(field);
             try {
@@ -53,12 +57,27 @@ const Garden = () => {
         </button>
       </div>
       <div
-        id="gardenLimits"
-        style={{ height: "60%", width: "50%", border: "1px solid black" }}
+        style={{
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
       >
-        {Object.entries(field).map((value) => {
-          return <PlotOfLand key={uuid()} props={value[0]} />;
-        })}
+        <div
+          id="gardenLimits"
+          style={{
+            height: "60%",
+            width: "50%",
+            border: "3px solid black",
+            marginRight: "20px",
+          }}
+        >
+          {Object.entries(field).map((value) => {
+            return <PlotOfLand key={uuid()} props={value[0]} />;
+          })}
+        </div>
+        <ListOFBlocks />
       </div>
     </>
   );

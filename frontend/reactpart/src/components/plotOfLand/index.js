@@ -17,7 +17,8 @@ const PlotOfLand = ({ props }) => {
             height: field[props].height,
           }}
           style={{
-            border: "1px solid black",
+            border: "2px solid",
+            borderColor: field[props].color,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
