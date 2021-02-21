@@ -103,5 +103,6 @@ npm install yarn --global
 
 * Manuel Moya - [Linkedin](https://www.linkedin.com/in/manuelmoyadev/)
 * Vasilii Nikonov - (email: vnikonov@ucsd.edu)
-
+* Kelly Lin - (https://github.com/klin20)
+* Gennifer Rene Hom - (grhom@ucdavis.edu)
 
