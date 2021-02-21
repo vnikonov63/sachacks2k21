@@ -96,6 +96,8 @@ npm install yarn --global
 
 <p> For more information you can watch the video we made about our project https://www.youtube.com/watch?v=juMu1YXpLF0 </p>
 
+<p>You can also try out the application at https://plantdacha.herokuapp.com/edit</p>
+
 <!-- CONTACT -->
 ## Contact
 
