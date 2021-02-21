@@ -88,7 +88,7 @@ npm install yarn --global
 <!-- CONTACT -->
 ## Contact
 
-Manuel Moya - [Linkedin](https://www.linkedin.com/in/manuelmoyadev/)
-Vasilii Nikonov - (email: vnikonov@ucsd.edu)
+* Manuel Moya - [Linkedin](https://www.linkedin.com/in/manuelmoyadev/)
+* Vasilii Nikonov - (email: vnikonov@ucsd.edu)
 
 
