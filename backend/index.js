@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb://localhost:27017/pleasebemearcy", {
+mongoose.connect(process.env.GARDENDB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
