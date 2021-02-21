@@ -9,7 +9,8 @@ import GardenContextFinal from "../contexts/gardenSavedContext";
 import PartNode from "../../schemas/GardenNodeClass";
 import ListOFBlocks from "../ListOfBlocksSoFar";
 
-const Garden = () => {
+const Garden = ({ props }) => {
+  console.log(props);
   let { field, setField } = useContext(GardenContext);
   const { gardenState, setGardenState } = useContext(GardenContextFinal);
   useEffect(() => {
@@ -24,37 +25,58 @@ const Garden = () => {
       <div
         style={{
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           marginBottom: "15px",
           marginTop: "10px",
         }}
       >
-        <button
-          style={{ marginRight: "20px" }}
-          className="waves-effect waves-light btn"
-          onClick={() => {
-            let obj = {};
-            obj[uuid()] = new PartNode();
-            setField({ ...field, ...obj });
-          }}
-        >
-          Create a new block
-        </button>
-        <button
-          className="waves-effect waves-light btn"
-          onClick={() => {
-            setGardenState(field);
-            try {
-              const serializedState = JSON.stringify(field);
-              localStorage.setItem("saved garden", serializedState);
-            } catch (err) {
-              console.log(err);
-            }
-          }}
-        >
-          Save the model
-        </button>
+        {props ? (
+          <>
+            <h4>
+              Hello, here you can edit your garden, don't forget to click save.
+            </h4>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <button
+                style={{ marginRight: "20px" }}
+                className="waves-effect waves-light btn"
+                onClick={() => {
+                  let obj = {};
+                  obj[uuid()] = new PartNode();
+                  setField({ ...field, ...obj });
+                }}
+              >
+                Create a new block
+              </button>
+              <button
+                className="waves-effect waves-light btn"
+                onClick={() => {
+                  setGardenState(field);
+                  try {
+                    const serializedState = JSON.stringify(field);
+                    localStorage.setItem("saved garden", serializedState);
+                  } catch (err) {
+                    console.log(err);
+                  }
+                }}
+              >
+                Save the model
+              </button>
+            </div>
+          </>
+        ) : (
+          <h4>
+            Hello, this is your saved model of the garden, stay healty and dont
+            forget to eat vegetables!
+          </h4>
+        )}
       </div>
       <div
         style={{
@@ -73,12 +95,29 @@ const Garden = () => {
             marginRight: "20px",
           }}
         >
-          {Object.entries(field).map((value) => {
-            return <PlotOfLand key={uuid()} props={value[0]} />;
-          })}
+          {props
+            ? Object.entries(field).map((value) => {
+                return (
+                  <PlotOfLand
+                    key={uuid()}
+                    props={value[0]}
+                    ableToEdit={false}
+                  />
+                );
+              })
+            : Object.entries(gardenState).map((value) => {
+                return (
+                  <PlotOfLand
+                    key={uuid()}
+                    props={value[0]}
+                    ableToEdit={false}
+                  />
+                );
+              })}
         </div>
-        <ListOFBlocks />
+        {props ? <ListOFBlocks /> : <></>}
       </div>
+      )
     </>
   );
 };

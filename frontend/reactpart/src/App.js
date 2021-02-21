@@ -16,9 +16,11 @@ function App() {
           <NavBar />
           <Switch>
             <Route path="/edit" exact>
-              <GardenWrapper />
+              <GardenWrapper props={true} />
             </Route>
-            <Route path="/saved" exact></Route>
+            <Route path="/saved" exact>
+              <GardenWrapper props={false} />
+            </Route>
             <Route path="/" exact>
               <HomeComponent />
             </Route>

@@ -5,8 +5,10 @@ import Garden from "../garden";
 
 // This is the wrapper for the garden part
 
-function GardenBuilder() {
+function GardenBuilder({ props }) {
   let stateRandom = {};
+
+  console.log("Props is", props);
 
   const [field, setField] = useState(stateRandom);
   return (
@@ -27,7 +29,7 @@ function GardenBuilder() {
             height: "100vh",
           }}
         >
-          <Garden />
+          <Garden props={props} />
         </div>
       </GardenContext.Provider>
       <div></div>
