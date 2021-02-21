@@ -69,17 +69,11 @@ npm install yarn --global
    ```sh
    git clone https://github.com/moyamanuel/sachacks2k21/
    ```
-   
-2. Navigate into the "frontend" directory
-   ```sh
-   cd frontend
-   ```
-
-4. Install NPM packages
+2. Install NPM packages
    ```sh
    yarn
    ```
-5. Run app
+3. Run app
   ```sh
   yarn start
   ```
