@@ -3,8 +3,20 @@ import { useContext, useState } from "react";
 import { Rnd } from "react-rnd";
 import GardenContext from "../contexts/gardenBasicContext";
 
-const PlotOfLand = ({ props }) => {
+const PlotOfLand = ({ props, ableToEdit }) => {
   let { field, setField } = useContext(GardenContext);
+  function resizingOptionsConstructor(booleanResize) {
+    return {
+      bottom: booleanResize,
+      bottomLeft: booleanResize,
+      bottomRight: booleanResize,
+      left: booleanResize,
+      right: booleanResize,
+      top: booleanResize,
+      topLeft: booleanResize,
+      topRight: booleanResize,
+    };
+  }
 
   return (
     <>
@@ -17,6 +29,8 @@ const PlotOfLand = ({ props }) => {
               width: field[props].width,
               height: field[props].height,
             }}
+            disableDragging={!ableToEdit}
+            enableResizing={resizingOptionsConstructor(ableToEdit)}
             style={{
               border: "2px solid",
               borderColor: field[props].color,

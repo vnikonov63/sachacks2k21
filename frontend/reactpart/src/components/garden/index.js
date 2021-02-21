@@ -98,11 +98,7 @@ const Garden = ({ props }) => {
           {props
             ? Object.entries(field).map((value) => {
                 return (
-                  <PlotOfLand
-                    key={uuid()}
-                    props={value[0]}
-                    ableToEdit={false}
-                  />
+                  <PlotOfLand key={uuid()} props={value[0]} ableToEdit={true} />
                 );
               })
             : Object.entries(gardenState).map((value) => {
@@ -117,7 +113,6 @@ const Garden = ({ props }) => {
         </div>
         {props ? <ListOFBlocks /> : <></>}
       </div>
-      )
     </>
   );
 };
