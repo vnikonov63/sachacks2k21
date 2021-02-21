@@ -38,6 +38,7 @@ function HomeComponent() {
         style={{ height: "30%", width: "15%", marginTop: "15px" }}
         src={team}
       ></img>
+      <h5>Another member of our team is Manuel Moya</h5>
       <h5>And the true muse of our project - Russian Babushka</h5>
       <img
         style={{ height: "30%", width: "15%", marginTop: "15px" }}
