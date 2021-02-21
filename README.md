@@ -4,13 +4,6 @@
     <img src="https://i.postimg.cc/sxmkkHSV/Logo.png"/>
 
   <h3 align="center">plant.dacha</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-  </p>
 </p>
 
 
@@ -92,22 +85,10 @@ npm install yarn --global
   ```sh
   yarn start
   ```
-
-
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-
 <!-- CONTACT -->
 ## Contact
 
 Manuel Moya - [Linkedin](https://www.linkedin.com/in/manuelmoyadev/)
+Vasilii Nikonov - (email: vnikonov@ucsd.edu)
 
 
